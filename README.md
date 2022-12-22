@@ -1,31 +1,21 @@
-# RepositorioTemplate
-Esse repositório é para ser utilizado pelos grupos como um template inicial, da home page do Projeto.
-As seções do Template NÃO DEVEM SER OMITIDAS, sendo TODAS RELEVANTES.
-
-**!! *Atenção: Renomeie o seu repositório para (Ano.Semestre)_(Grupo)_(Paradigma)_(NomeDoProjeto)*. !!** 
-
-Paradigmas:
- - Funcional
- - Logico
- - SMA
-
-**!! *Não coloque os nomes dos alunos no título do repositório*. !!**
-
-**!! *Exemplo de título correto: 2022.2_G1_Logico_ProjetoRoteirosAereos*. !!**
- 
- (Apague esses comentários)
-
-# NomeDoProjeto
+# Inimigos da Ignorância
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>
-**Nro do Grupo (de acordo com a Planilha de Divisão dos Grupos)**: XX<br>
-**Paradigma**: XXXXXXXXXX<br>
+**Nro do Grupo (de acordo com a Planilha de Divisão dos Grupos)**: 02<br>
+**Paradigma**: Lógico<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 19/0041871  |  Abner Filipe Cunha Ribeiro   |
+| 19/0102390  |  André Macedo Rodrigues Alves |
+| 19/0012307  |  Eduardo Afonso Dutra Silva   |
+| 18/0018728  |  Igor Batista Paiva           |
+| 18/0033620  |  João Henrique Cunha Paulino  |
+| 16/0152615  |  João Pedro Elias de Moura    |
+| 18/0054554  |  Paulo Batista                |
+| 19/0019158  |  Rafael Leão Teixeira de Magalhães |
+| 19/0020903  |  Vitor Magalhães Lamego       |
 
 ## Sobre 
 Descreva o seu projeto em linhas gerais. 
@@ -36,11 +26,15 @@ Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no 
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
 
 ## Instalação 
-**Linguagens**: xxxxxx<br>
-**Tecnologias**: xxxxxx<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
-Gifs animados e outras ilustrações são bem-vindos!
+**Linguagens**: JavaScript, python, sql, prolog<br>
+**Tecnologias**: flask,postgresql,SWI-Prolog <br>
+
+O projeto contém diversas tecnologias e instalar manualmente cada uma é um trabalho desafiador,
+a solução foi usar o docker-compose. Sendo assim, basta entrar na pasta do projeto e executar o comando
+docker-compose up -d. Um servidor web em JavaScript irá ser criado em sua máquina. No seu navegador web
+favorito digite: "localhost:8080", e então você terá acesso a página inicial da aplicação.
+
+Ainda não tem o Docker e o docker-compose instalado ? [Instalando docker](https://github.com/JoaoHenrique12/TutorialPostgreSQL/blob/main/DOCKER.md#instalando-o-dockerzitos)
 
 ## Uso 
 Explique como usar seu projeto.
