@@ -18,9 +18,38 @@
 | 19/0020903  |  Vitor Magalhães Lamego       |
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
-Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
-Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
+
+A ideia era que um grupo de engenheiros de software, extremamente inspirados
+no filme 'A Rede social',
+montassem uma rede social com base na wikipédia. O problema é que nenhum
+deles se lembrava como montar diagramas UML, o que gerou a pasta [docs\/ ](docs/)
+do projeto. Alguns deles sabiam apenas Python ou JavaScript ou Prolog, o 
+que levou o projeto a ser separado em 3 diferentes módulos + 1 banco de
+dados postgres.
+
+A parte em prolog seria um servidor HTTP com rotas pré configuradas para 
+cada regra presente no projeto e os fatos seriam obtidos das tuplas do
+Postgres.
+
+### Quais seriam as regras do Prolog ?
+
+- Classificar o usuário como Jovem, Adulto ou Senior dependendo da idade.
+- Poderia averiguar se pessoas que não gostam de ler passam mais tempo em artigos com menos palavras e mais imagens.
+- Poderia ver se os artigos considerados como ofensivos são mais acessados.
+- Poderia averiguar se homens nao consideram um determinado artigo como ofensivo enquanto que mulheres o consideram.
+- Poderia inferir se o usuario esta procurando cônjuge na rede social, os parâmetros seriam se ele segue mais pessoas do sexo oposto e se estas pessoas são do mesmo estado.
+- Poderia classificar um artigo como familly friendly se 90 % das pessoas Jovens, Adultas e Seniors não o classificassem como ofensivo.
+- Faria a recomendação de amigos, artigos e categorias baseadas nas informações dos usuário.
+
+### Por que descontinuar o projeto ?
+
+1. Complexidade de implementação alta.
+2. A parte das regras do prolog não estavam/estão muito claras.
+
+### Nota
+
+Inicialmente foi pensado em usar a desciclopédia como fonte de dados, mas
+o site é muito ofensivo. 
 
 ## Screenshots
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
