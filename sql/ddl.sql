@@ -102,3 +102,45 @@ CREATE TABLE IF NOT EXISTS artigo_pertence_categoria (
 
   CONSTRAINT PK_artigo_pertence_categoria PRIMARY KEY(titulo_categoria,titulo_artigo)
 );
+
+-- Functions para retornar valores derivados.
+
+-- Derivados de Pessoa
+CREATE OR REPLACE FUNCTION idade(IN name varchar(75), OUT idade record) RETURNS record AS $$
+BEGIN
+  SELECT DATE_PART('year',now()) - DATE_PART('year',nascimento)  FROM pessoa wHERE username = name INTO idade;
+END;
+$$ language plpgsql;
+
+-- Derivados de Artigo
+CREATE OR REPLACE FUNCTION qtdPessoasLeram(IN titulo_artigo varchar(50), OUT n_pessoas record) RETURNS record AS $$
+BEGIN
+  SELECT COUNT(DISTINCT username) FROM pessoa_le_artigo WHERE titulo = titulo_artigo INTO n_pessoas;
+END;
+$$ language plpgsql;
+
+CREATE OR REPLACE FUNCTION qtdLeituras(IN titulo_artigo varchar(50), OUT n_leituras record) RETURNS record AS $$
+BEGIN
+  SELECT COUNT(username) FROM pessoa_le_artigo WHERE titulo = titulo_artigo INTO n_leituras;
+END;
+$$ language plpgsql;
+
+CREATE OR REPLACE FUNCTION qtdTempoLido(IN titulo_artigo varchar(50), OUT tempo_leitura record) RETURNS record AS $$
+BEGIN
+  SELECT COALESCE(SUM(tempoLido),'00:00:00') FROM pessoa_le_artigo WHERE titulo = titulo_artigo INTO tempo_leitura;
+END;
+$$ language plpgsql;
+
+-- Derivados de Categoria
+
+CREATE OR REPLACE FUNCTION qtdArtigos(IN titulo varchar(50), OUT n_artigos record) RETURNS record AS $$
+BEGIN
+  SELECT COUNT(titulo_artigo) FROM artigo_pertence_categoria WHERE titulo_categoria = titulo INTO n_artigos;
+END;
+$$ language plpgsql;
+
+CREATE OR REPLACE FUNCTION qtdSubcategorias(IN titulo varchar(50), OUT n_subcategorias record) RETURNS record AS $$
+BEGIN
+  SELECT COUNT(titulo_subcategoria) FROM categoria_possui_categoria WHERE titulo_dono = titulo INTO n_subcategorias;
+END;
+$$ language plpgsql;
